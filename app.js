@@ -44,3 +44,16 @@ class Character {
         console.log(`${this.name} rolled a ${result}`);
     }
 }
+
+class Adventurer extends Character {
+    constructor (name, role, stats = {power:0, armor:0, speed:0}) {
+      super(name);
+      this.role = role;
+      this.inventory.push("bedroll", "50 gold coins");
+      this.stats = stats;
+    }
+    scout () {
+      console.log(`${this.name} is scouting ahead...`);
+      super.roll();
+    }
+  }
